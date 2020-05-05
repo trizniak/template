@@ -21,14 +21,14 @@
   + *SETUP* : packages & personalization (theme, color palettes, label color function, EU countries, ...)
   + *UPDATES* : updating original input data (output : *DATAFILE.Rdata*)
 * FUNS
-  + *DATA...* : Main data files (incl. data.breaks)
-  + *Fviz* : Visualizations
-  + *Ftab* : Tables
-  + *Fdx* : descriptors (titles, legends, captions, ...)
+  + *DATA_* : Main data files (incl. data.breaks)
+  + *Fviz_* : Visualizations
+  + *Ftab_* : Tables
+  + *Fdx_* : descriptors (titles, legends, captions, ...)
 
 -----
 
-# File and Variable Names
+# Names : File , Variable , Function
 
 ## Files
 * *data.Rdata* : main project data, including ONLY variables and cases used in the analysis
@@ -43,9 +43,9 @@
 ## Variables
 * [ x x x ]
   
-# Charts
-* *F.Ch* : static chart
-* *F.ChI* : interactive chart (click on chart elements)
-* *F.ChX* : interactive chart (checkboxes / dropdowns for data filters)
+## Functions
+* *F.data.* : data
+* *F.viz.* : visualization
+* *F.tab* : table
 
 -----
