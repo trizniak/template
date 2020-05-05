@@ -100,3 +100,14 @@
       
       -------------
       SOURCE : https://stackoverflow.com/questions/33521828/stylecolorbar-center-and-shift-left-right-dependent-on-sign
+
+
+### Regression by groups
+
+      data = data %>%
+        group_by(...) %>%
+        do({
+          mod=lm(var.Y~var.X, data=.)
+          data.frame(slope=coef(mod)[2])
+          }) %>%
+        right_join(data)
