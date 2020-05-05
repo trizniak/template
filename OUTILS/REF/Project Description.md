@@ -1,7 +1,7 @@
-**Project Description**
+**[Project Name]**
 ================
 
-[ x x x ]
+[ DETAILS ]
 
 -----
 
