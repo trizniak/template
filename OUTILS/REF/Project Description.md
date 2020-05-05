@@ -46,6 +46,6 @@
 ## Functions
 * *F.data.* : data
 * *F.viz.* : visualization
-* *F.tab* : table
+* *F.tab.* : table
 
 -----
