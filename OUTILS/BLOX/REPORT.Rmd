@@ -55,7 +55,12 @@ a, a:hover {
 
 ```{r SETUP, message=FALSE, warning=FALSE, include=FALSE}
 
-knitr::opts_chunk$set(dpi=69, out.width="100%", message=FALSE, warning=FALSE, echo=FALSE, dev=c("png"))
+knitr::opts_chunk$set(dpi=69,
+                      out.width="100%",
+                      message=FALSE,
+                      warning=FALSE,
+                      echo=FALSE,
+                      dev=c("png"))
 
 ```
 <!-- ------------- END LAYOUT SETUP ------------- -->
@@ -65,7 +70,8 @@ knitr::opts_chunk$set(dpi=69, out.width="100%", message=FALSE, warning=FALSE, ec
 
 htmltools::img(src=knitr::image_uri(here("OUTILS","MIX","FE logo.png")), 
                alt='logo', 
-               style='position:absolute; top:0; right:0; padding:9px;height:111px;width:111px')
+               style='position:absolute; top:0; right:0; padding:9px; height:111px; width:111px')
+
 ```
 
 
@@ -80,7 +86,8 @@ htmltools::img(src=knitr::image_uri(here("OUTILS","MIX","FE logo.png")),
 
 out=NULL
 for (country in country.list[country.list !="EU"]) {
-  out=c(out, knitr::knit_expand(here("OUTILS","BLOX","REPORT [COUNTRY].Rmd")))
+  out=c(out,
+        knitr::knit_expand(here("OUTILS","BLOX","REPORT [COUNTRY].Rmd")))
 }
 
 ```
