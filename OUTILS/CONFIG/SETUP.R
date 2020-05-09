@@ -41,7 +41,7 @@ pacman::p_load(
 	patchwork,    # [VIZ]	        https://cran.r-project.org/web/packages/patchwork/index.html
 #	plotly,       # [VIZ]	        https://cran.r-project.org/web/packages/plotly/index.html
 #	plotrix,      # [VIZ]	        https://cran.r-project.org/web/packages/plotrix/index.html
-	tidyverse			# [.KEY]				https://cran.r-project.org/web/packages/tidyverse/index.html
+	tidyverse     # [.KEY]        https://cran.r-project.org/web/packages/tidyverse/index.html
 )
 
 pacman::p_load_gh("wilkelab/ggtext",
