@@ -16,7 +16,6 @@ pacman::p_load(
 	here,         # [.KEY]  	    https://cran.r-project.org/web/packages/here/index.html
 	readr,        # [.KEY]  	    https://cran.r-project.org/web/packages/readr/index.html
 	scales,       # [.KEY]  	    https://cran.r-project.org/web/packages/scales/index.html
-	tidyverse,    # [.KEY]  	    https://cran.r-project.org/web/packages/tidyverse/index.html
 #	smacof,       # [ANALYTICS] 	https://cran.r-project.org/web/packages/smacof/index.html
 #	pheatmap,     # [ANALYTICS] 	https://cran.r-project.org/web/packages/pheatmap/index.html
 #	docxtractr,   # [DATA]    	  https://cran.r-project.org/web/packages/docxtractr/index.html
@@ -40,7 +39,8 @@ pacman::p_load(
 #	highcharter,  # [VIZ]	        https://cran.r-project.org/web/packages/highcharter/index.html
 	patchwork,    # [VIZ]	        https://cran.r-project.org/web/packages/patchwork/index.html
 #	plotly,       # [VIZ]	        https://cran.r-project.org/web/packages/plotly/index.html
-#	plotrix       # [VIZ]	        https://cran.r-project.org/web/packages/plotrix/index.html
+#	plotrix,      # [VIZ]	        https://cran.r-project.org/web/packages/plotrix/index.html
+	tidyverse			# [.KEY]				https://cran.r-project.org/web/packages/tidyverse/index.html
 )
 
 pacman::p_load_gh("wilkelab/ggtext",
