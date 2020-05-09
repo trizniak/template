@@ -1,0 +1,12 @@
+```{r , echo=FALSE , message=FALSE , warning=FALSE}
+
+country='{{country}}'
+
+```
+
+<p>
+## `r subset(EU.PO,COUNTRY==country,select=Country.Name)` (`r country`) {.tabset .tabset-pills}
+
+
+```{r child=here("OUTILS","BLOX","REPORT [SECTION].Rmd", eval=[ x x x ]}
+```
