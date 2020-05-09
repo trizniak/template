@@ -1,0 +1,97 @@
+---
+title: '`r paste0(subset(EU.PO,COUNTRY==country,select=Country.Name)," (",country,")")`'
+output:
+  html_document:
+    theme: flatly
+    toc: true
+    toc_float: true
+    toc_depth: 3
+mainfont: Calibri
+---
+
+<!-- ------------- START LAYOUT SETUP ------------- -->
+
+<!-- LOGO -->
+
+<script>
+  $(document).ready(function() {
+    $('#TOC').parent().prepend('<div id=\"nav_logo\"><img src=\"https://ec.europa.eu/eurostat/cache/digpub/european_economy/vis/chapter21_1/images/logoestat.png\"></div>');
+  });
+</script>
+
+<!-- STYLE -->
+
+<style>
+#nav_logo {
+  width: 100%;
+  margin-top: 20px;
+}
+#TOC {
+  background: url("https://ec.europa.eu/eurostat/documents/10186/8486739/experimental-blue.png");
+  background-size: contain;
+  padding-top: 77px !important;
+  background-repeat: no-repeat;
+}
+
+h1.title {
+  font-size: 31px;
+  font-weight: bold;
+  color: DarkRed;
+  text-align:center;
+}
+
+body {
+  font-size: 17px;
+  font-family: Calibri;
+  color: #273749;
+  text-align:justify;
+}
+
+a, a:hover {
+    color: cornflowerblue;
+}
+
+</style>
+
+```{r SETUP, message=FALSE, warning=FALSE, include=FALSE}
+
+knitr::opts_chunk$set(dpi=69, out.width="100%", message=FALSE, warning=FALSE, echo=FALSE, dev=c("png"))
+
+```
+<!-- ------------- END LAYOUT SETUP ------------- -->
+
+
+```{r echo=FALSE}
+
+htmltools::img(src=knitr::image_uri(here("OUTILS","MIX","FE logo.png")), 
+               alt='logo', 
+               style='position:absolute; top:0; right:0; padding:9px;height:111px;width:111px')
+```
+
+
+<p>
+<p>
+
+***
+
+# COUNTRY sections
+
+```{r COUNTRY sections, message=FALSE, warning=FALSE}
+
+out=NULL
+for (country in country.list[country.list !="EU"]) {
+  out=c(out, knitr::knit_expand(here("OUTILS","BLOX","REPORT [COUNTRY].Rmd")))
+}
+
+```
+`r #paste(knitr::knit(text=out), collapse='\n')`
+
+</div>
+
+<center>
+<a href="http://ec.europa.eu/eurostat">
+<img src="https://ec.europa.eu/eurostat/cache/digpub/european_economy/vis/chapter21_1/images/logoestat.png" width="369" /></a><p>
+**Directorate F: Social statistics**<br>
+Unit F1: *Social indicators; methodology and development; Relations with users*<br>
+[contact the **Flash Estimates** team `r knitr::asis_output("\U1F4E7")`](mailto:ESTAT-FLASH-EST-INCOME@ec.europa.eu)
+</center>
