@@ -8,8 +8,8 @@ source("./OUTILS/CONFIG/SETUP.R")
 if (update) source("./OUTILS/CONFIG/UPDATES.R")
 
 # ---- PARAMETERS ----
-param.list=list([ x x x ])
-saveRDS(param.list,file=here("OUTILS","CONFIG","param.rds"))
+# param.list=list([ x x x ])
+# saveRDS(param.list,file=here("OUTILS","CONFIG","param.rds"))
 
 # ---- data.x ----
 source(here("OUTILS","FUNS","DATA_X.R"))
@@ -25,4 +25,5 @@ if(out) rmarkdown::render(here("OUTILS","BLOX","REPORT.Rmd") ,
                           output_file=paste0("[ x x x ].html") ,
                           output_dir=here("OUTPUT") ,
                           intermediates_dir=here("T E M P") ,
-                          quiet=TRUE,clean=TRUE)
+                          quiet=TRUE,
+                          clean=TRUE)
