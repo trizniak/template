@@ -13,7 +13,8 @@ my.color="#273749" # 214263 0B4279 0b2131 1b3142
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(tidyverse, # always first
                devtools,crosstalk,docxtractr,eurostat,ggpubr,kableExtra,reactable,
-               highcharter,plotly,pheatmap,gplots,dtwclust,ggrepel,smacof,DT,
+               highcharter,plotly,pheatmap,gplots,dtwclust,ggrepel,smacof,DT,janitor,
+               tsibble,fable,feasts,# time series
                readr,readxl,restatapi,scales,glue,patchwork,here,ggplotify)
 
 pacman::p_load_gh("wilkelab/ggtext","clauswilke/gridtext") # "jokergoo/ComplexHeatmap"
