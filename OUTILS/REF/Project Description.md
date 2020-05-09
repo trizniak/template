@@ -16,7 +16,7 @@
 
 
 # SCRIPTS
-* **[ x x x ]** : core project script
+* **_MAIN** : core project script
 * CONFIG
   + *SETUP* : packages & personalization (theme, color palettes, label color function, EU countries, ...)
   + *UPDATES* : updating original input data (output : *DATAFILE.Rdata*)
