@@ -22,9 +22,10 @@
   + *UPDATES* : updating original input data (output : *DATAFILE.Rdata*)
 * FUNS
   + *DATA_* : Main data files (incl. data.breaks)
-  + *Fviz_* : Visualizations
-  + *Ftab_* : Tables
   + *Fdx_* : descriptors (titles, legends, captions, ...)
+  + *Fpam_* : Processing, Analysis, Modeling
+  + *Ftab_* : Tables
+  + *Fviz_* : Visualizations
 
 -----
 
@@ -41,11 +42,14 @@
 * [MIX] *KB* : Knowledge Base (links to relevant articles)
 
 ## Variables
-* [ x x x ]
+* *l_* : level
+* *y_* : Year-on-Year (YoY) change
+* *s_* : share
   
 ## Functions
 * *F.data.* : data
-* *F.viz.* : visualization
+* *F.pam.* : Processing, Analysis, Modeling
 * *F.tab.* : table
+* *F.viz.* : visualization
 
 -----
