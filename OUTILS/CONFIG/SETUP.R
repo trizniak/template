@@ -32,6 +32,7 @@ eurostat,	#[DATA]		https://cran.r-project.org/web/packages/eurostat/index.html
 # dtwclust,	#[TIMESERIES]	https://cran.r-project.org/web/packages/dtwclust/index.html
 # fable,	#[TIMESERIES]	https://cran.r-project.org/web/packages/fable/index.html
 # feasts,	#[TIMESERIES]	https://cran.r-project.org/web/packages/feasts/index.html
+# slider,	#[TIMESERIES]	https://cran.r-project.org/web/packages/slider/index.html
 # tsibble,	#[TIMESERIES]	https://cran.r-project.org/web/packages/tsibble/index.html
 # ggplotify,	#[VIZ]		https://cran.r-project.org/web/packages/ggplotify/index.html
 # ggpubr,	#[VIZ]		https://cran.r-project.org/web/packages/ggpubr/index.html
