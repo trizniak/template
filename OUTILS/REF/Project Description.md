@@ -39,12 +39,12 @@
 * *data.viz* : data set used for visualization
 * *data.XT* : shared data (crosstalk)
 * *param.rds* : key project parameteres that need to be consistent across analyses and data processing steps
-* [MIX] *KB* : Knowledge Base (links to relevant articles)
+* [MIX] *KB* : Knowledge Base (code snippets, links to relevant articles)
 
 ## Variables
 * *l_* : level
-* *y_* : Year-on-Year (YoY) change
 * *s_* : share
+* *y_* : Year-on-Year (YoY) change
   
 ## Functions
 * *F.data.* : data
