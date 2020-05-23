@@ -111,3 +111,16 @@
           data.frame(slope=coef(mod)[2])
           }) %>%
         right_join(data)
+
+### Dynamic variables
+
+      for (lag_size in c(1, 5, 10, 15, 20)) {
+        new_col_name <- paste0("lag_result_", lag_size)
+        grouped_data <- grouped_data %>%
+          mutate(!!sym(new_col_name) := lag(Result, n = lag_size, default = NA))
+        }
+      
+      sym(new_col_name) := is a dynamic way of writing lag_result_1 =, lag_result_2 =, etc. when using functions like mutate()
+      
+      -------------
+      SOURCE : https://stackoverflow.com/questions/55940655/how-to-mutate-for-loop-in-dplyr
