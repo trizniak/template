@@ -40,6 +40,8 @@
 * *data.XT* : shared data (crosstalk)
 * *param.rds* : key project parameteres that need to be consistent across analyses and data processing steps
 * [MIX] *KB* : Knowledge Base (code snippets, links to relevant articles)
+* *REPORT* : Rmarkdown for generating report
+* *BLOK.* : Report sections (country, indicator, age group, etc)
 
 ## Variables
 * *l_* : level
