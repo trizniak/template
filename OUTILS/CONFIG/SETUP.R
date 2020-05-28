@@ -25,7 +25,7 @@ eurostat,	#[DATA]		https://cran.r-project.org/web/packages/eurostat/index.html
 # restatapi,	#[DATA]		https://cran.r-project.org/web/packages/restatapi/index.html
 # crosstalk,	#[INTERACTIVE]	https://cran.r-project.org/web/packages/crosstalk/index.html
 # glue,		#[OUTILS]	https://cran.r-project.org/web/packages/glue/index.html
-# janitor,	#[OUTILS]	https://cran.r-project.org/web/packages/janitor/index.html
+janitor,	#[OUTILS]	https://cran.r-project.org/web/packages/janitor/index.html
 # DT,		#[TAB]		https://cran.r-project.org/web/packages/DT/index.html
 # kableExtra,	#[TAB]		https://cran.r-project.org/web/packages/kableExtra/index.html
 # reactable,	#[TAB]		https://cran.r-project.org/web/packages/reactable/index.html
