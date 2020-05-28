@@ -45,6 +45,7 @@ patchwork,	#[VIZ]		https://cran.r-project.org/web/packages/patchwork/index.html
 tidyverse	#[.KEY]]	https://cran.r-project.org/web/packages/tidyverse/index.html
 )
 
+remotes::install_github("clauswilke/ggtext")
 pacman::p_load_gh("wilkelab/ggtext",
                   "clauswilke/gridtext")
 
