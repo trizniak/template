@@ -38,16 +38,13 @@ janitor,	#[OUTILS]	https://cran.r-project.org/web/packages/janitor/index.html
 # ggpubr,	#[VIZ]		https://cran.r-project.org/web/packages/ggpubr/index.html
 # ggrepel,	#[VIZ]		https://cran.r-project.org/web/packages/ggrepel/index.html
 # gplots,	#[VIZ]		https://cran.r-project.org/web/packages/gplots/index.html
+ggtext,		#[VIZ]		https://cran.r-project.org/web/packages/ggtext/index.html
 # highcharter,	#[VIZ]		https://cran.r-project.org/web/packages/highcharter/index.html
 patchwork,	#[VIZ]		https://cran.r-project.org/web/packages/patchwork/index.html
 # plotly,	#[VIZ]		https://cran.r-project.org/web/packages/plotly/index.html
 # plotrix,	#[VIZ]		https://cran.r-project.org/web/packages/plotrix/index.html
 tidyverse	#[.KEY]]	https://cran.r-project.org/web/packages/tidyverse/index.html
 )
-
-remotes::install_github("clauswilke/ggtext")
-pacman::p_load_gh("wilkelab/ggtext",
-                  "clauswilke/gridtext")
 
 
 # ---- THEME ----
