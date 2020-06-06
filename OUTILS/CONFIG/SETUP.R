@@ -13,37 +13,40 @@ my.color="#273749" # 214263 0B4279 0b2131 1b3142
 # ---- PACKAGES ----
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(
-devtools,	#[.KEY]		https://cran.r-project.org/web/packages/devtools/index.html
-here,		#[.KEY]		https://cran.r-project.org/web/packages/here/index.html
-readr,		#[.KEY]		https://cran.r-project.org/web/packages/readr/index.html
-scales,		#[.KEY]		https://cran.r-project.org/web/packages/scales/index.html
-# smacof,	#[ANALYTICS]	https://cran.r-project.org/web/packages/smacof/index.html
-# pheatmap,	#[ANALYTICS]	https://cran.r-project.org/web/packages/pheatmap/index.html
-# docxtractr,	#[DATA]		https://cran.r-project.org/web/packages/docxtractr/index.html
-eurostat,	#[DATA]		https://cran.r-project.org/web/packages/eurostat/index.html
-# readxl,	#[DATA]		https://cran.r-project.org/web/packages/readxl/index.html
-# restatapi,	#[DATA]		https://cran.r-project.org/web/packages/restatapi/index.html
-# crosstalk,	#[INTERACTIVE]	https://cran.r-project.org/web/packages/crosstalk/index.html
-# glue,		#[OUTILS]	https://cran.r-project.org/web/packages/glue/index.html
-janitor,	#[OUTILS]	https://cran.r-project.org/web/packages/janitor/index.html
-# DT,		#[TAB]		https://cran.r-project.org/web/packages/DT/index.html
-# kableExtra,	#[TAB]		https://cran.r-project.org/web/packages/kableExtra/index.html
-# reactable,	#[TAB]		https://cran.r-project.org/web/packages/reactable/index.html
-# dtwclust,	#[TIMESERIES]	https://cran.r-project.org/web/packages/dtwclust/index.html
-# fable,	#[TIMESERIES]	https://cran.r-project.org/web/packages/fable/index.html
-# feasts,	#[TIMESERIES]	https://cran.r-project.org/web/packages/feasts/index.html
-# slider,	#[TIMESERIES]	https://cran.r-project.org/web/packages/slider/index.html
-# tsibble,	#[TIMESERIES]	https://cran.r-project.org/web/packages/tsibble/index.html
-# ggplotify,	#[VIZ]		https://cran.r-project.org/web/packages/ggplotify/index.html
-# ggpubr,	#[VIZ]		https://cran.r-project.org/web/packages/ggpubr/index.html
-# ggrepel,	#[VIZ]		https://cran.r-project.org/web/packages/ggrepel/index.html
-# gplots,	#[VIZ]		https://cran.r-project.org/web/packages/gplots/index.html
-ggtext,		#[VIZ]		https://cran.r-project.org/web/packages/ggtext/index.html
-# highcharter,	#[VIZ]		https://cran.r-project.org/web/packages/highcharter/index.html
-patchwork,	#[VIZ]		https://cran.r-project.org/web/packages/patchwork/index.html
-# plotly,	#[VIZ]		https://cran.r-project.org/web/packages/plotly/index.html
-# plotrix,	#[VIZ]		https://cran.r-project.org/web/packages/plotrix/index.html
-tidyverse	#[.KEY]]	https://cran.r-project.org/web/packages/tidyverse/index.html
+        devtools,	#[.KEY]		https://cran.r-project.org/web/packages/devtools/index.html
+        here,		#[.KEY]		https://cran.r-project.org/web/packages/here/index.html
+        readr,		#[.KEY]		https://cran.r-project.org/web/packages/readr/index.html
+        scales,		#[.KEY]		https://cran.r-project.org/web/packages/scales/index.html
+        # smacof,	#[ANALYTICS]	https://cran.r-project.org/web/packages/smacof/index.html
+        # pheatmap,	#[ANALYTICS]	https://cran.r-project.org/web/packages/pheatmap/index.html
+        # docxtractr,	#[DATA]		https://cran.r-project.org/web/packages/docxtractr/index.html
+        eurostat,	#[DATA]		https://cran.r-project.org/web/packages/eurostat/index.html
+        # readxl,	#[DATA]		https://cran.r-project.org/web/packages/readxl/index.html
+        # restatapi,	#[DATA]		https://cran.r-project.org/web/packages/restatapi/index.html
+        # crosstalk,	#[INTERACTIVE]	https://cran.r-project.org/web/packages/crosstalk/index.html
+        # glue,		#[OUTILS]	https://cran.r-project.org/web/packages/glue/index.html
+        janitor,	#[OUTILS]	https://cran.r-project.org/web/packages/janitor/index.html
+        # DT,		#[TAB]		https://cran.r-project.org/web/packages/DT/index.html
+        # kableExtra,	#[TAB]		https://cran.r-project.org/web/packages/kableExtra/index.html
+        # reactable,	#[TAB]		https://cran.r-project.org/web/packages/reactable/index.html
+        # dtwclust,	#[TIME SERIES]	https://cran.r-project.org/web/packages/dtwclust/index.html
+        fable,        	#[TIME SERIES]	https://cran.r-project.org/web/packages/fable/index.html
+        feasts,	        #[TIME SERIES]	https://cran.r-project.org/web/packages/feasts/index.html
+        #slider,	#[TIME SERIES]	https://cran.r-project.org/web/packages/feasts/index.html
+        tsibble,	#[TIME SERIES]	https://cran.r-project.org/web/packages/tsibble/index.html
+        urca,        	#[TIME SERIES]	https://cran.r-project.org/web/packages/urca/index.html
+        zoo,       	#[TIME SERIES]	https://cran.r-project.org/web/packages/zoo/index.html
+        # ggplotify,	#[VIZ]		https://cran.r-project.org/web/packages/ggplotify/index.html
+        # ggpubr,	#[VIZ]		https://cran.r-project.org/web/packages/ggpubr/index.html
+        # ggrepel,	#[VIZ]		https://cran.r-project.org/web/packages/ggrepel/index.html
+        # gplots,	#[VIZ]		https://cran.r-project.org/web/packages/gplots/index.html
+        ggtext,		#[VIZ]		https://cran.r-project.org/web/packages/ggtext/index.html
+        # highcharter,	#[VIZ]		https://cran.r-project.org/web/packages/highcharter/index.html
+        patchwork,	#[VIZ]		https://cran.r-project.org/web/packages/patchwork/index.html
+        # plotly,	#[VIZ]		https://cran.r-project.org/web/packages/plotly/index.html
+        # plotrix,	#[VIZ]		https://cran.r-project.org/web/packages/plotrix/index.html
+        ragg,        	#[VIZ]		https://cran.r-project.org/web/packages/ragg/index.html
+        tidyverse	#[.KEY]]	https://cran.r-project.org/web/packages/tidyverse/index.html
 )
 
 
