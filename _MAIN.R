@@ -1,7 +1,7 @@
 # ---- [ x x x ] ----
 
-out=TRUE # generate output? TRUE/FALSE
 update=FALSE # update main data files (data.breaks, DATAFILE, data)? TRUE/FALSE
+report=TRUE # generate output? TRUE/FALSE
 
 # ---- START ----
 source("./OUTILS/CONFIG/SETUP.R")
@@ -21,9 +21,9 @@ source(here("OUTILS","FUNS","Fdx_TLK.R"))
 source(here("OUTILS","FUNS","DATA_VIZ.R"))
 
 # ---- OUTPUT ----
-if(out) rmarkdown::render(here("OUTILS","BLOX","REPORT.Rmd") ,
-                          output_file=paste0("[ x x x ].html") ,
-                          output_dir=here("OUTPUT") ,
-                          intermediates_dir=here("T E M P") ,
-                          quiet=TRUE,
-                          clean=TRUE)
+if(report) rmarkdown::render(here("OUTILS","BLOX","REPORT.Rmd"),
+                             output_file=paste0("COVID.html"),
+                             output_dir=here("OUTPUT"),
+                             intermediates_dir=here("T E M P"),
+                             quiet=TRUE,
+                             clean=TRUE)
