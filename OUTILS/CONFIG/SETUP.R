@@ -36,6 +36,7 @@ pacman::p_load(
         tsibble,	#[TIME SERIES]	https://cran.r-project.org/web/packages/tsibble/index.html
         urca,        	#[TIME SERIES]	https://cran.r-project.org/web/packages/urca/index.html
         zoo,       	#[TIME SERIES]	https://cran.r-project.org/web/packages/zoo/index.html
+        ggiraph,	#[VIZ]		https://cran.r-project.org/web/packages/ggiraph/index.html
         # ggplotify,	#[VIZ]		https://cran.r-project.org/web/packages/ggplotify/index.html
         # ggpubr,	#[VIZ]		https://cran.r-project.org/web/packages/ggpubr/index.html
         # ggrepel,	#[VIZ]		https://cran.r-project.org/web/packages/ggrepel/index.html
@@ -119,7 +120,6 @@ palette.clu = c("firebrick",
 
 
 # ---- FUNCTION : Label Color ----
-
 f.label.color = function(x,color.neg="green3",color.poz="red") {
   paste0("<b><span style='color:",
 	 case_when(x<0~color.neg,
@@ -127,11 +127,19 @@ f.label.color = function(x,color.neg="green3",color.poz="red") {
                    TRUE~"#273749"),
          "'>",x,"</span>")}
 
+
+# ---- FUNCTION : Pretty Rounding ----
+f.pretty.round=function (x) {
+        E=ifelse(x==0,0,floor(log10(abs(x))-1))
+        F=x/10^E
+        5*ceiling(F/5)*10^E
+}
+
+
 # ---- EU MS : Protocol Order ----
 EU.PO = read_delim(here("OUTILS","REF","EU.PO.txt"),"\t",
 		   escape_double=FALSE,
 		   trim_ws=TRUE) %>%
   as.data.frame() %>%
   filter(COUNTRY!="UK")
-
 country.list=c(as.list(unique(as.character(EU.PO$COUNTRY))),"EU")
