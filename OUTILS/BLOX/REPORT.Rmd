@@ -51,6 +51,12 @@ a, a:hover {
     color: cornflowerblue;
 }
 
+div.blue {
+  background-color:#e6f0ff;
+  border-radius: 4px;
+  padding: 11px;
+}
+
 </style>
 
 ```{r SETUP, message=FALSE, warning=FALSE, include=FALSE}
