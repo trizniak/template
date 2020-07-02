@@ -50,6 +50,7 @@
   
 ## Functions
 * *F.data.* : data
+  + *F.data.estat* : included in the <span style="color:OrangeRed">SETUP</span> file
 * *F.pam.* : Processing, Analysis, Modeling
 * *F.tab.* : table
 * *F.viz.* : visualization
