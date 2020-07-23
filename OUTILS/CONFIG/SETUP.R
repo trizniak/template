@@ -24,18 +24,19 @@ pacman::p_load(
         # readxl,	#[DATA]		https://cran.r-project.org/web/packages/readxl/index.html
         # restatapi,	#[DATA]		https://cran.r-project.org/web/packages/restatapi/index.html
         # crosstalk,	#[INTERACTIVE]	https://cran.r-project.org/web/packages/crosstalk/index.html
+        extrafont,	#[OUTILS]	https://cran.r-project.org/web/packages/extrafont/index.html
         # glue,		#[OUTILS]	https://cran.r-project.org/web/packages/glue/index.html
         janitor,	#[OUTILS]	https://cran.r-project.org/web/packages/janitor/index.html
         # DT,		#[TAB]		https://cran.r-project.org/web/packages/DT/index.html
         # kableExtra,	#[TAB]		https://cran.r-project.org/web/packages/kableExtra/index.html
         # reactable,	#[TAB]		https://cran.r-project.org/web/packages/reactable/index.html
         # dtwclust,	#[TIME SERIES]	https://cran.r-project.org/web/packages/dtwclust/index.html
-        fable,        	#[TIME SERIES]	https://cran.r-project.org/web/packages/fable/index.html
-        feasts,	        #[TIME SERIES]	https://cran.r-project.org/web/packages/feasts/index.html
-        #slider,	#[TIME SERIES]	https://cran.r-project.org/web/packages/feasts/index.html
-        tsibble,	#[TIME SERIES]	https://cran.r-project.org/web/packages/tsibble/index.html
-        urca,        	#[TIME SERIES]	https://cran.r-project.org/web/packages/urca/index.html
-        zoo,       	#[TIME SERIES]	https://cran.r-project.org/web/packages/zoo/index.html
+        # fable,        #[TIME SERIES]	https://cran.r-project.org/web/packages/fable/index.html
+        # feasts,	#[TIME SERIES]	https://cran.r-project.org/web/packages/feasts/index.html
+        # slider,	#[TIME SERIES]	https://cran.r-project.org/web/packages/feasts/index.html
+        # tsibble,	#[TIME SERIES]	https://cran.r-project.org/web/packages/tsibble/index.html
+        # urca,        	#[TIME SERIES]	https://cran.r-project.org/web/packages/urca/index.html
+        # zoo,       	#[TIME SERIES]	https://cran.r-project.org/web/packages/zoo/index.html
         ggiraph,	#[VIZ]		https://cran.r-project.org/web/packages/ggiraph/index.html
         # ggplotify,	#[VIZ]		https://cran.r-project.org/web/packages/ggplotify/index.html
         # ggpubr,	#[VIZ]		https://cran.r-project.org/web/packages/ggpubr/index.html
@@ -46,7 +47,7 @@ pacman::p_load(
         patchwork,	#[VIZ]		https://cran.r-project.org/web/packages/patchwork/index.html
         # plotly,	#[VIZ]		https://cran.r-project.org/web/packages/plotly/index.html
         # plotrix,	#[VIZ]		https://cran.r-project.org/web/packages/plotrix/index.html
-        ragg,        	#[VIZ]		https://cran.r-project.org/web/packages/ragg/index.html
+        # ragg,        	#[VIZ]		https://cran.r-project.org/web/packages/ragg/index.html
         tidyverse	#[.KEY]]	https://cran.r-project.org/web/packages/tidyverse/index.html
 )
 
@@ -56,17 +57,14 @@ my.theme = function() {
   theme_minimal() +
     theme(text=element_text(family="Calibri",
 			    color=my.color),
-          axis.line.x.bottom=element_line(color="grey",
-					  size=.3),	# set as element_blank to remove : axis.line is ignored
-          axis.line.y.left=element_line(color="grey",
-					size=.3),	# set as element_blank to remove : axis.line is ignored
+          axis.line.x.bottom=element_blank() # to remove : axis.line is ignored
+          axis.line.y.left=element_blank() # to remove : axis.line is ignored
           axis.text=element_blank(),
           axis.ticks=element_blank(),
           axis.title=element_text(face="italic"),
           legend.title=element_blank(),
           panel.background=element_blank(),
-          panel.border=element_rect(size=0.1,
-				    fill=NA),
+          panel.border=element_rect(size=0.1,fill=NA),
           panel.grid=element_blank(),
           panel.spacing=unit(0.1,"lines"),
           plot.title=element_markdown(),
@@ -77,9 +75,9 @@ my.theme = function() {
           strip.text=element_text(color=my.color,
 				  face="italic"))
 }
-
 theme_set(my.theme())
-
+# FONTS ----
+# extrafont::font_import(prompt=FALSE)
 
 # ---- Color Palette : Age groups ----
 # 6 groups
@@ -129,10 +127,10 @@ f.label.color = function(x,color.neg="green3",color.poz="red") {
 
 
 # ---- FUNCTION : Pretty Rounding ----
-f.pretty.round=function (x) {
+f.pretty.round=function (x,step=5) {
         E=ifelse(x==0,0,floor(log10(abs(x))-1))
         F=x/10^E
-        5*ceiling(F/5)*10^E
+        step*ceiling(F/step)*10^E
 }
 
 
