@@ -3,13 +3,13 @@
 update=FALSE # update main data files (data.breaks, DATAFILE, data)? TRUE/FALSE
 report=TRUE # generate output? TRUE/FALSE
 
-# ---- START ----
-source("./OUTILS/CONFIG/SETUP.R")
-if (update) source("./OUTILS/CONFIG/UPDATES.R")
-
 # ---- PARAMETERS ----
 # param.list=list([ x x x ])
 # saveRDS(param.list,file=here("OUTILS","CONFIG","param.rds"))
+
+# ---- START ----
+source("./OUTILS/CONFIG/SETUP.R")
+if (update) source("./OUTILS/CONFIG/UPDATES.R")
 
 # ---- data.x ----
 source(here("OUTILS","FUNS","DATA_X.R"))
