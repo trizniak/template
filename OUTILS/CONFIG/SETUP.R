@@ -57,8 +57,8 @@ my.theme = function() {
   theme_minimal() +
     theme(text=element_text(family="Calibri",
 			    color=my.color),
-          axis.line.x.bottom=element_blank() # to remove : axis.line is ignored
-          axis.line.y.left=element_blank() # to remove : axis.line is ignored
+          axis.line.x.bottom=element_blank(), # to remove : axis.line is ignored
+          axis.line.y.left=element_blank(), # to remove : axis.line is ignored
           axis.text=element_blank(),
           axis.ticks=element_blank(),
           axis.title=element_text(face="italic"),
