@@ -125,7 +125,7 @@
       -------------
       SOURCE : https://stackoverflow.com/questions/55940655/how-to-mutate-for-loop-in-dplyr
 
-### Refer to dataframe inside ggplot
+### [ggplot] Refer to dataframe inside ggplot
 
       If you wrap the plotting code in {...}, you can use . to specify exactly where the previously calculated results are inserted
       
