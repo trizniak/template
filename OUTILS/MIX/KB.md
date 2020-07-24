@@ -124,3 +124,22 @@
       
       -------------
       SOURCE : https://stackoverflow.com/questions/55940655/how-to-mutate-for-loop-in-dplyr
+
+### Refer to dataframe inside ggplot
+
+      If you wrap the plotting code in {...}, you can use . to specify exactly where the previously calculated results are inserted
+      
+        df %>% filter(area == "Health") %>% {
+        ggplot(.) +    # add . to specify to insert results here
+        geom_line(aes(x = as.factor(year), y = value, 
+                      group = sub_area, color = sub_area), size = 2) + 
+        geom_point(aes(x = as.factor(year), y = value, 
+                       group = sub_area, color = sub_area), size = 2) +
+        theme_minimal(base_size = 18) + 
+        geom_text(data = dplyr::filter(., year == 2016 & sub_area == "Activities"),    # and here
+                  aes(x = as.factor(year), y = value, 
+                      color = sub_area, label = area), size = 6, hjust = 1)
+        }
+      
+      -------------
+      SOURCE : https://stackoverflow.com/questions/44007998/subset-filter-in-dplyr-chain-with-ggplot2
