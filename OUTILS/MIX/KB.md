@@ -31,8 +31,8 @@
       title: '`r days <- 60; paste0(days, " Days")`' # note the ; between lines of code
       ---
       
-      -------------
-      SOURCE : https://stackoverflow.com/questions/52540279/dynamic-rmarkdown-title-from-r-code-chunk
+    -------------
+    SOURCE : https://stackoverflow.com/questions/52540279/dynamic-rmarkdown-title-from-r-code-chunk
 
 
 ### [Plotly] Customize ModeBar buttons
@@ -79,8 +79,8 @@
         main="Metric MDS", type="n")
       text(x, y, labels = row.names(mydata), cex=.7)
       
-      -------------
-      SOURCE : https://www.statmethods.net/advstats/mds.html
+    -------------
+    SOURCE : https://www.statmethods.net/advstats/mds.html
 
 
 ### [DataTable (DT)] Bi-directional Color Bar
@@ -98,8 +98,8 @@
       datatable(data) %>%
       formatStyle('value',background=color_from_middle(data$value,'red','blue'))
       
-      -------------
-      SOURCE : https://stackoverflow.com/questions/33521828/stylecolorbar-center-and-shift-left-right-dependent-on-sign
+    -------------
+    SOURCE : https://stackoverflow.com/questions/33521828/stylecolorbar-center-and-shift-left-right-dependent-on-sign
 
 
 ### Regression by groups
@@ -122,8 +122,8 @@
       
       sym(new_col_name) := is a dynamic way of writing lag_result_1 =, lag_result_2 =, etc. when using functions like mutate()
       
-      -------------
-      SOURCE : https://stackoverflow.com/questions/55940655/how-to-mutate-for-loop-in-dplyr
+    -------------
+    SOURCE : https://stackoverflow.com/questions/55940655/how-to-mutate-for-loop-in-dplyr
 
 ### [ggplot] Refer to dataframe inside ggplot
 
@@ -141,5 +141,20 @@
                       color = sub_area, label = area), size = 6, hjust = 1)
         }
       
-      -------------
-      SOURCE : https://stackoverflow.com/questions/44007998/subset-filter-in-dplyr-chain-with-ggplot2
+    -------------
+    SOURCE : https://stackoverflow.com/questions/44007998/subset-filter-in-dplyr-chain-with-ggplot2
+
+### Self-referent function argument
+
+      For a function argument defined as itself, specify the argument in the call instead of the definition.
+      This does not work:
+        x = 4
+        my.function <- function(x = x){}
+        my.function() # recursive error!
+      but this does work:
+        x = 4
+        my.function <- function(x){}
+        my.function(x = x) # works fine!
+      
+    -------------
+    SOURCE : https://stackoverflow.com/questions/4357101/promise-already-under-evaluation-recursive-default-argument-reference-or-earlie 
