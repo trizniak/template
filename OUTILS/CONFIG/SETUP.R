@@ -118,20 +118,53 @@ palette.clu = c("firebrick",
 
 
 # ---- FUNCTION : Label Color ----
-f.label.color = function(x,color.neg="green3",color.poz="red") {
+f.label.color = function(x,
+			 color.negative="red",
+			 color.neutral="grey",
+			 color.pozitive="green4") {
   paste0("<b><span style='color:",
-	 case_when(x<0~color.neg,
-                   x>0~color.poz,
-                   TRUE~"#273749"),
+	 case_when(x<0~color.negative,
+                   x>0~color.pozitive,
+                   TRUE~color.neutral),
          "'>",x,"</span>")}
+# scale_y_continuous(labels=function (X) f.label.color(X,"midnightblue","#273749","magenta") / labels=f.label.color)
 
 
 # ---- FUNCTION : Pretty Rounding ----
-f.pretty.round=function (x,step=5) {
-        E=ifelse(x==0,0,floor(log10(abs(x))-1))
-        F=x/10^E
-        step*ceiling(F/step)*10^E
+f.pretty.round = function (x,step=5) {
+  E=ifelse(x==0,0,floor(log10(abs(x))-1))
+  F=x/10^E
+  step*ceiling(F/step)*10^E
 }
+
+
+# ---- FUNCTION : Scale / RUI limits ----
+f.lim = function (data,
+                  symm=FALSE) { # are the limits symmetric?
+  lim = data %>%
+    mutate(v.p=ifelse(YOY>0,f.pretty.round(pmax(y_RUI.HI,YOY+2*y_SD,na.rm=TRUE),
+                                           step=5),0),
+           v.n=ifelse(YOY<0,f.pretty.round(pmin(y_RUI.lo,YOY-2*y_SD,na.rm=TRUE),
+                                           step=5),0)) %>%
+    summarize(n=min({if (ind.t=="INEQ") -4 else -10},
+                    min(v.n,na.rm=TRUE)),
+              p=max({if (ind.t=="INEQ") 4 else 10},
+                    max(v.p,na.rm=TRUE))) %>%
+    unlist()
+  if (symm) lim else c(n=-max(abs(lim)),p=max(abs(lim)))
+}
+
+
+# ---- LABELS : INDICATOR ----
+INDICATOR.lab =
+  c(AROP="At-risk-of-poverty rate (AROP)",
+    INWORK="In-work poverty",
+    QSR="Quintile Share Ratio (QSR)",
+    MEDIAN="Median income",
+    D1="Income decile 1 (D1)",
+    D3="Income decile 3 (D3)",
+    D7="Income decile 7 (D7)",
+    D9="Income decile 9 (D9)")
 
 
 # ---- EU MS : Protocol Order ----
