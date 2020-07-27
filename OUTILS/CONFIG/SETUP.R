@@ -157,35 +157,49 @@ f.lim = function (data,
   if (symm) c(n=-max(abs(lim)),p=max(abs(lim))) else lim
 }
 
-		    
+
 # ---- FUNCTION : DATA (NS / SILC.noSIG / SILC.SIG / FE.noSIG / FE.SIG / FE.cens[+] / FE.cens[-]) ----
-f.data.data = function (data,
+f.data.censig = function (data,
                         palette=palette.overview) {
   
-  is.SILC=NROW(subset(data,SOURCE=="SILC"))>0
+  is.SILC=NROW(subset(data,SOURCE=="SILC"))>0 & length(palette)>6
   data %>%
-    mutate(data=factor(case_when(SOURCE=="FE" & cens==0 & SIG==0 ~ names(palette)[3],
-                                 SOURCE=="FE" & cens==0 & SIG==1 ~ names(palette)[4],
-                                 SOURCE=="FE" & cens==1 & YOY<0 ~ names(palette)[ifelse(INDICATOR %in% c("AROP","QSR"),5,6)],
-                                 SOURCE=="FE" & cens==1 & YOY>0 ~ names(palette)[ifelse(INDICATOR %in% c("AROP","QSR"),6,5)],
-                                 if (is.SILC) SOURCE=="SILC" & SIG==0 ~ names(palette)[7],
-                                 if (is.SILC) SOURCE=="SILC" & SIG==1 ~ names(palette)[8]),
+    mutate(source.censig=factor(case_when(SOURCE=="FE" & cens==0 & SIG==0 ~
+                                            names(palette)[3],
+                                          SOURCE=="FE" & cens==0 & SIG==1 ~
+                                            names(palette)[4],
+                                          SOURCE=="FE" & cens==1 & YOY<0 ~
+                                            names(palette)[ifelse(INDICATOR %in% c("AROP","QSR"),5,6)],
+                                          SOURCE=="FE" & cens==1 & YOY>0 ~
+                                            names(palette)[ifelse(INDICATOR %in% c("AROP","QSR"),6,5)],
+                                          if (is.SILC) SOURCE=="SILC" & SIG==0 ~
+                                            names(palette)[7],
+                                          if (is.SILC) SOURCE=="SILC" & SIG==1 ~
+                                            names(palette)[8]),
                        levels=names(palette)))
 }
 
-	   
+
 # ---- FUNCTION : RUI segments ----
 f.data.RUI = function(data,
                       n=RUI.segments) {
+  data = data %>%
+    mutate(y_hRUI=ifelse(SOURCE=="FE" & cens==0,
+                         (y_RUI.HI-y_RUI.lo)/2,
+                         0),
+           y_cRUI=ifelse(SOURCE=="FE" & cens==0,
+                         (y_RUI.HI+y_RUI.lo)/2,
+                         0))
+  
   for (i in 1:n) {
     data = data %>%
-      mutate("y_hRUI.{i}":=ifelse(SOURCE=="SILC",NA,
-                                  (y_RUI.HI-y_RUI.lo)/(2*ifelse(cens==1,n,1))),
-             "y_hRUI.{i}":=ifelse(SOURCE=="FE" & cens==0 & i>1,NA,
-                                  !!as.name(paste0("y_hRUI.",i))),
+      mutate("y_hRUI.{i}":=ifelse(SOURCE=="FE" & cens==1,
+                                  (y_RUI.HI-y_RUI.lo)/(2*n),
+                                  0),
              "y_cRUI.{i}":=ifelse(SOURCE=="SILC",NA,
-                                  y_RUI.lo+sign(YOY)*!!as.name(paste0("y_hRUI.",i))*(2*i-1)),
-             "y_hRUI.{i}":=!!as.name(paste0("y_hRUI.",i))*ifelse(cens==1,(1-(i-1)/n)^2,1),
+                                  y_RUI.lo+!!as.name(paste0("y_hRUI.",i))*(2*i-1)),
+             "y_hRUI.{i}":=!!as.name(paste0("y_hRUI.",i))*ifelse(cens==1,(1-(i-1)/n),
+                                                                 {if (i==1) 1 else 0}),
              "alpha_RUI.{i}":=ifelse(SOURCE=="SILC",NA,
                                      0.77*(1-(i-1)/(n))^2))
   }
