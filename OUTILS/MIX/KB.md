@@ -3,8 +3,6 @@
 
 ## Links to relevant articles
 
------
-
 * **Colors**
   + [HTML color codes](https://htmlcolorcodes.com/)
   + [R colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
@@ -23,8 +21,6 @@
 
 
 ## OUTILS [outside R]
-
------
 
 * [web scraping] the [SelectorGadget chrome extension](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?hl=en) could isolate the individual html node.
 
