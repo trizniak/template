@@ -22,6 +22,13 @@
   + [Bi-directional Color Bar](https://stackoverflow.com/questions/33521828/stylecolorbar-center-and-shift-left-right-dependent-on-sign)
 
 
+## OUTILS [outside R]
+
+-----
+
+* [web scraping] the [SelectorGadget chrome extension](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?hl=en) could isolate the individual html node.
+
+
 ## Code snippets  {.tabset .tabset-dropdown}
 
 ### [RMarkdown] <span style="color:DarkRed">Dynamic Title</span>
