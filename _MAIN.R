@@ -1,29 +1,33 @@
-# ---- [ x x x ] ----
 
-update=FALSE # update main data files (data.breaks, DATAFILE, data)? TRUE/FALSE
-report=TRUE # generate output? TRUE/FALSE
+# ==== XXXXXXXXXXXXXXXXXXXXXX ====
+# #### ~~~~~~~~~~~~~~~~~~~~~~ ####
 
-# ---- PARAMETERS ----
-# param.list=list([ x x x ])
-# saveRDS(param.list,file=here("OUTILS","CONFIG","param.rds"))
+# ~~~ PARAMS ~~~ ####
+# Ref.Year=2019 # reference year (year the report refers to)
+update.reference.info=FALSE
+update.data=FALSE
+  copy.datafiles=FALSE # copy input datafiles to work folder ; relevant only if update.data=TRUE
 
-# ---- START ----
-source("./OUTILS/CONFIG/SETUP.R")
-if (update) source("./OUTILS/CONFIG/UPDATES.R")
+# Sections to run ~~~ ####
+run.output=FALSE # check _OUTPUT.R/[ Sections to run ]
 
-# ---- data.x ----
-source(here("OUTILS","FUNS","DATA_X.R"))
+# ~~~ SETUP ~~~ ####
+source("./R/_SETUP.R")
 
-# ---- Titles, subtitles, captions, variable names ----
-source(here("OUTILS","FUNS","Fdx_TLK.R"))
+# ~~~ Reference Info ~~~ ####
+# load("./outils/countries.RData")
+# load("./outils/tables.RData")
 
-# ---- data.viz ----
-source(here("OUTILS","FUNS","DATA_VIZ.R"))
+# ~~~ UPDATES ~~~ ####
+if (update.reference.info) source("./R/_REF.R")
+if (update.data) {
+  source("./R/_DATA.R")
+}
 
-# ---- OUTPUT ----
-if(report) rmarkdown::render(here("OUTILS","BLOX","REPORT.Rmd"),
-                             output_file=paste0("COVID.html"),
-                             output_dir=here("OUTPUT"),
-                             intermediates_dir=here("T E M P"),
-                             quiet=TRUE,
-                             clean=TRUE)
+# ~~~ DATA ~~~ ####
+# load("./data/XXXXXXXX.RData")
+
+# ~~~ OUTPUT ~~~ ####
+if (run.output) {
+  source("./R/_OUTPUT.R")  # check _OUTPUT.R/[ Sections to run ]
+}
