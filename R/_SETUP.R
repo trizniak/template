@@ -1,6 +1,8 @@
-# ---- SETUP ----
+# ==== SETUP ====
+# #### ~~~~~ ####
 
-# Code appearance ([Tools] [Global Options] [Appearance]) : Tomorrow Night Blue
+# ~~~ OPTIONS ~~~ ####
+# ... Code appearance ([Tools] [Global Options] [Appearance]) : Tomorrow Night Blue
 
 options(repr.plot.width=49,
 	repr.plot.height=36,
@@ -13,7 +15,7 @@ my.color.light="#a1b3c9"
 # scales::show_col(c(my.color.dark,my.color.medium,my.color.light),ncol=1)
 
 
-# ---- PACKAGES ----
+# ~~~ PACKAGES ~~~ ####
 if (!require("pacman")) utils::install.packages("pacman")
 pacman::p_load(
   devtools,		    #[.KEY]         https://cran.r-project.org/web/packages/devtools/index.html
@@ -60,17 +62,20 @@ pacman::p_load(
   # ragg,        	#[VIZ]    			https://cran.r-project.org/web/packages/ragg/index.html
   tidyverse		    #[.KEY]		    	https://cran.r-project.org/web/packages/tidyverse/index.html
 )
+# ... websjot ####
 # webshot::install_phantomjs(force=FALSE)
 
+# ... Necessary on business machine ¯\_(ツ)_/¯ ####
 library(dplyr)
 library(tibble)
 
-# ---- FONTS ----
+
+# ~~~ FONTS ~~~ ####
 pacman::p_load(extrafont)
 #extrafont::font_import(prompt=FALSE)
 
 
-# ---- THEME ----
+# ~~~ THEME ~~~ ####
 my.theme = function() {
   ggplot2::theme_minimal() +
     ggplot2::theme(text=element_text(family="Calibri",
@@ -101,7 +106,7 @@ my.theme = function() {
 ggplot2::theme_set(my.theme())
 
 
-# ---- COLOR PALETTES ----
+# ~~~ COLOR PALETTES ~~~ ####
 
 palette.ESTAT = # Theme 3: Population and social conditions
   c(orange.3="#faa519", # dark orange
@@ -125,12 +130,12 @@ palette.ESTAT = # Theme 3: Population and social conditions
 # scales::show_col(palette.ESTAT,labels=FALSE,ncol=3)
 
 
-# ---- LABELS ----
+# ~~~ LABELS ~~~ ####
 
 
-# ---- AUXILIARY FUNS ----
+# ~~~ AUX FUNS ~~~ ####
 
-# * FUN : Label Color ----
+# * FUN : Label Color ####
 f.label.color = function(x,
                          color.negative=palette.ESTAT["red.3"], # "red"
                          color.neutral=palette.ESTAT["teal.3"], # "lightgrey"
@@ -142,27 +147,30 @@ f.label.color = function(x,
          "'>",x,"</span>")}
 # scale_y_continuous(labels=function (X) f.label.color(X,"midnightblue","#273749","magenta") / labels=f.label.color)
 
-# * FUN : Pretty Rounding ----
+# * FUN : Pretty Rounding ####
 f.pretty.round = function (x,step=5) {
   E=ifelse(x==0,0,floor(log10(abs(x))-1))
   F=x/10^E
   step*ceiling(F/step)*10^E
 }
 
-# * FUN : Get Eurostat data ----
-f.data.estat = function(datafile,
-                        lag=0) {
+# * FUN : Get Eurostat data ####
+f.data.estat = function(.datafile,
+                        .lag=0,
+		        .filter=FALSE) {
   # http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di01&lang=en
-  eurostat::get_eurostat(datafile,
+  eurostat::get_eurostat(.datafile,
                          time_format="num",
                          keepFlags=TRUE) %>%
     dplyr::rename(COUNTRY=geo,
                   YEAR=time,
                   level=values) %>%
+    {if (.filter)
     dplyr::filter(COUNTRY %in% names(country.list),
                   YEAR>=2005,
-                  !is.na(level)) %>%
-    dplyr::mutate(YEAR=YEAR-lag,
+                  !is.na(level))
+      else .} %>%
+    dplyr::mutate(YEAR=YEAR-.lag,
                   d.break=ifelse(substr(flags,1,1)=="b",1,NA),
                   COUNTRY=as.character(COUNTRY))
 }
