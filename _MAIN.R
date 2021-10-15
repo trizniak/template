@@ -2,8 +2,14 @@
 # ==== XXXXXXXXXXXXXXXXXXXXXX ====
 # #### ~~~~~~~~~~~~~~~~~~~~~~ ####
 
+# ~~~ INIT ~~~ ####
+.connect2internet("OrizaT");.connect2internet("OrizaT")
+
 # ~~~ PARAMS ~~~ ####
-# Ref.Year=2019 # reference year (year the report refers to)
+
+# FOLDERS & FILENAMES ~~~ ####
+
+# UPDATES ~~~ ####
 update.reference.info=FALSE
 update.data=FALSE
   copy.datafiles=FALSE # copy input datafiles to work folder ; relevant only if update.data=TRUE
