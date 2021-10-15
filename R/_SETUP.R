@@ -155,6 +155,7 @@ f.pretty.round = function (x,step=5) {
 }
 
 # * FUN : Get Eurostat data ####
+# https://stackoverflow.com/questions/59796178/r-curlhas-internet-false-even-though-there-are-internet-connection
 f.data.estat = function(.datafile,
                         .lag=0,
 		        .filter=FALSE) {
