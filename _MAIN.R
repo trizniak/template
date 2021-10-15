@@ -13,6 +13,7 @@ run.output=FALSE # check _OUTPUT.R/[ Sections to run ]
 
 # ~~~ SETUP ~~~ ####
 source("./R/_SETUP.R")
+source("./R/_AUX-FUN.R")
 
 # ~~~ Reference Info ~~~ ####
 # load("./outils/countries.RData")
