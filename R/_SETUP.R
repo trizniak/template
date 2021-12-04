@@ -24,6 +24,7 @@ pacman::p_load(
   scales,			    #[.KEY]         https://cran.r-project.org/web/packages/scales/index.html
   # smacof,		    #[ANALYTICS]    https://cran.r-project.org/web/packages/smacof/index.html
   # pheatmap,		  #[ANALYTICS]	  https://cran.r-project.org/web/packages/pheatmap/index.html
+  yardstick,		  #[ANALYTICS]	  https://cran.r-project.org/web/packages/yardstick/index.html
   # docxtractr,	  #[DATA]			    https://cran.r-project.org/web/packages/docxtractr/index.html
   eurostat,		    #[DATA]			    https://cran.r-project.org/web/packages/eurostat/index.html
   readxl,			    #[DATA]		    	https://cran.r-project.org/web/packages/readxl/index.html
@@ -73,12 +74,13 @@ library(tibble)
 # ~~~ FONTS ~~~ ####
 pacman::p_load(extrafont)
 #extrafont::font_import(prompt=FALSE)
+grDevices::windowsFonts(KLB=grDevices::windowsFont("Calibri"))
 
 
 # ~~~ THEME ~~~ ####
 my.theme = function() {
   ggplot2::theme_minimal() +
-    ggplot2::theme(text=element_text(family="Calibri",
+    ggplot2::theme(text=element_text(family="KLB",
                                      color=my.color.dark),
                    axis.line.x.bottom=element_line(color="grey",
                                                    size=.3),	# set as element_blank to remove : axis.line is ignored
@@ -128,6 +130,12 @@ palette.ESTAT = # Theme 3: Population and social conditions
     teal.2="#7ad9d9", # regular teal
     teal.1="#a6e6e6") # light teal
 # scales::show_col(palette.ESTAT,labels=FALSE,ncol=3)
+
+palette.years = c("firebrick",		# current/target year
+		  "midnightblue",	# current/target year - 1
+		  "royalblue",		# current/target year - 2
+		  "steelblue1",		# current/target year - 3
+		  "lightgray")		# before current/target year - 3
 
 
 # ~~~ LABELS ~~~ ####
