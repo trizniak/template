@@ -63,7 +63,7 @@ pacman::p_load(
   # ragg,        	#[VIZ]    			https://cran.r-project.org/web/packages/ragg/index.html
   tidyverse		    #[.KEY]		    	https://cran.r-project.org/web/packages/tidyverse/index.html
 )
-# ... websjot ####
+# ... webshot ####
 # webshot::install_phantomjs(force=FALSE)
 
 # ... Necessary on business machine ¯\_(ツ)_/¯ ####
