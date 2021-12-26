@@ -12,6 +12,7 @@
 # source("./R/F.VIZ.R")
 
 # * Sections to run ####
+# Check OUTPUT.[ Sections to run ]
 viz.XXXXXXX=FALSE
 tab.XXXXXXX=FALSE
 doc.XXXXXXX=FALSE
