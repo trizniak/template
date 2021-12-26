@@ -1,11 +1,12 @@
 
-# ==== XXXXXXXXXXXXXXXXXXXXXX ====
-# #### ~~~~~~~~~~~~~~~~~~~~~~ ####
-
-# ~~~ INIT ~~~ ####
-.connect2internet("OrizaT");.connect2internet("OrizaT")
+# ==== [PROJECT NAME] XXXXXXXXXXXXXXXXXXXXXX ====
+# #### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ####
 
 # ~~~ PARAMS ~~~ ####
+
+# Sections to run ~~~ ####
+run.output=FALSE # check below OUTPUT.[ Sections to run ] - included as parameters in ./R/_OUTPUT.R
+  # OUTPUT.xxx=FALSE
 
 # FOLDERS & FILENAMES ~~~ ####
 
@@ -14,8 +15,13 @@ update.reference.info=FALSE
 update.data=FALSE
   copy.datafiles=FALSE # copy input datafiles to work folder ; relevant only if update.data=TRUE
 
-# Sections to run ~~~ ####
-run.output=FALSE # check _OUTPUT.R/[ Sections to run ]
+
+# -------------------------------------------------------------------------------
+# |                        DO NOT edit beyond this point                        |
+# -------------------------------------------------------------------------------
+
+# ~~~ INIT ~~~ ####
+.connect2internet("OrizaT");.connect2internet("OrizaT") # ¯\_(ツ)_/¯
 
 # ~~~ SETUP ~~~ ####
 source("./R/_SETUP.R")
@@ -36,5 +42,5 @@ if (update.data) {
 
 # ~~~ OUTPUT ~~~ ####
 if (run.output) {
-  source("./R/_OUTPUT.R")  # check _OUTPUT.R/[ Sections to run ]
+  source("./R/_OUTPUT.R")  # check above OUTPUT.[ Sections to run ]
 }
