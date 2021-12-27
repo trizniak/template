@@ -2,6 +2,8 @@
 # ==== OUTPUT for XXXXXXX ====
 # #### ~~~~~~~~~~~~~~~~~~ ####
 
+# ~~~ RUN : START ~~~ ####
+run.start=Sys.time()
 
 # ~~~ INIT ~~~ ####
 
@@ -46,3 +48,11 @@ message(gsub("/","\\",
                          .archive.output,
                          fixed=TRUE)),
              fixed=TRUE))
+
+# ~~~ RUN : END ~~~ ####
+cat(paste0("RUNTIME : ",
+           lubridate::int_diff(c(run.start,
+                                 Sys.time())) %>%
+             lubridate::int_length() %>%
+             round() %>%
+             lubridate::seconds_to_period()))
