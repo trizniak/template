@@ -20,6 +20,9 @@ update.data=FALSE
 # |                        DO NOT edit beyond this point                        |
 # -------------------------------------------------------------------------------
 
+# ~~~ RUN : START ~~~ ####
+run.start=Sys.time()
+
 # ~~~ INIT ~~~ ####
 .connect2internet("OrizaT");.connect2internet("OrizaT") # ¯\_(ツ)_/¯
 
@@ -44,3 +47,11 @@ if (update.data) {
 if (run.output) {
   source("./R/_OUTPUT.R")  # check above OUTPUT.[ Sections to run ]
 }
+
+# ~~~ RUN : END ~~~ ####
+cat(paste0("RUNTIME : ",
+           lubridate::int_diff(c(run.start,
+                                 Sys.time())) %>%
+             lubridate::int_length() %>%
+             round() %>%
+             lubridate::seconds_to_period()))
