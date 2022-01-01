@@ -166,11 +166,11 @@ f.pretty.round = function (x,step=5) {
 
 # * FUN : Get Eurostat data ####
 # https://stackoverflow.com/questions/59796178/r-curlhas-internet-false-even-though-there-are-internet-connection
-f.data.estat = function(.datafile,
+f.data.estat = function(.filename,
                         .lag=0,
 		        .filter=FALSE) {
   # http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_di01&lang=en
-  eurostat::get_eurostat(.datafile,
+  eurostat::get_eurostat(.filename,
                          time_format="num",
                          keepFlags=TRUE) %>%
     dplyr::rename(COUNTRY=geo,
