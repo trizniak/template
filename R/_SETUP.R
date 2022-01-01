@@ -37,6 +37,8 @@ pacman::p_load(
   # webshot,		  #[OUTILS]		    https://cran.r-project.org/web/packages/webshot/index.html
   withr,			    #[OUTILS]   		https://cran.r-project.org/web/packages/withr/index.html
   zip,			      #[OUTILS]   		https://cran.r-project.org/web/packages/zip/index.html
+  # officer,        #[REPORT]    		https://cran.r-project.org/web/packages/officer/index.html
+  # officedown,		  #[REPORT]    		https://cran.r-project.org/web/packages/officedown/index.html
   # DT,			      #[TAB]    			https://cran.r-project.org/web/packages/DT/index.html
   flextable,	    #[TAB]    			https://cran.r-project.org/web/packages/flextable/index.html
   ftExtra,			#[TAB]    			https://cran.r-project.org/web/packages/ftExtra/index.html
@@ -180,6 +182,8 @@ f.data.estat = function(.datafile,
                   !is.na(level))
       else .} %>%
     dplyr::mutate(YEAR=YEAR-.lag,
-                  d.break=ifelse(substr(flags,1,1)=="b",1,NA),
-                  COUNTRY=as.character(COUNTRY))
+		  d.break=replace_na(str_detect(tolower(flags),"b"),FALSE),
+                  d.estimate=replace_na(str_detect(tolower(flags),"e"),FALSE),
+                  d.provisional=replace_na(str_detect(tolower(flags),"p"),FALSE),
+		  COUNTRY=as.character(COUNTRY))
 }
