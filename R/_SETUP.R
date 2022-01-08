@@ -8,12 +8,8 @@ options(repr.plot.width=49,
 	repr.plot.height=36,
 	scipen=999,
 	digits=1,
-	warn=-1)
-my.color.dark="#273749"
-my.color.medium="#446699"
-my.color.light="#a1b3c9"
-# scales::show_col(c(my.color.dark,my.color.medium,my.color.light),ncol=1)
-
+	warn=-1,
+	dplyr.summarise.inform=FALSE) # suppress additional info
 
 # ~~~ PACKAGES ~~~ ####
 if (!require("pacman")) utils::install.packages("pacman")
@@ -79,38 +75,12 @@ pacman::p_load(extrafont)
 grDevices::windowsFonts(KLB=grDevices::windowsFont("Calibri"))
 
 
-# ~~~ THEME ~~~ ####
-my.theme = function() {
-  ggplot2::theme_minimal() +
-    ggplot2::theme(text=element_text(family="KLB",
-                                     color=my.color.dark),
-                   axis.line.x.bottom=element_line(color="grey",
-                                                   size=.3),	# set as element_blank to remove : axis.line is ignored
-                   axis.line.y.left=element_line(color="grey",
-                                                 size=.3),	# set as element_blank to remove : axis.line is ignored
-                   axis.text=element_blank(),
-                   axis.ticks=element_blank(),
-                   axis.title=element_text(face="italic"),
-                   legend.title=element_blank(),
-                   panel.background=element_blank(),
-                   panel.border=element_rect(size=0.1,
-                                             color="grey",
-                                             fill=NA),
-                   panel.grid=element_blank(),
-                   panel.spacing=unit(0.1,"lines"),
-                   plot.title=element_markdown(),
-                   plot.title.position="plot",
-                   plot.subtitle=element_markdown(),
-                   strip.background=element_blank(),
-                   strip.placement="outside",
-                   strip.text=element_text(color=my.color.dark,
-                                           face="italic"))
-}
-
-ggplot2::theme_set(my.theme())
-
-
 # ~~~ COLOR PALETTES ~~~ ####
+
+palette.personal = c(main.dark="#273749",
+		     main.medium="#446699",
+		     main.light="#a1b3c9")
+# scales::show_col(palette.personal,labels=FALSE,ncol=1)
 
 palette.ESTAT = # Theme 3: Population and social conditions
   c(orange.3="#faa519", # dark orange
@@ -140,6 +110,37 @@ palette.years = c("firebrick",		# current/target year
 		  "lightgray")		# before current/target year - 3
 
 
+# ~~~ THEME ~~~ ####
+my.theme = function() {
+  ggplot2::theme_minimal() +
+    ggplot2::theme(text=element_text(family="KLB",
+                                     color=palette.personal["main.dark"]),
+                   axis.line.x.bottom=element_line(color=palette.personal["main.light"],
+                                                   size=.3),	# set as element_blank to remove : axis.line is ignored
+                   axis.line.y.left=element_line(color=palette.personal["main.light"],
+                                                 size=.3),	# set as element_blank to remove : axis.line is ignored
+                   axis.text=element_blank(),
+                   axis.ticks=element_blank(),
+                   axis.title=element_text(face="italic"),
+                   legend.title=element_blank(),
+                   panel.background=element_blank(),
+                   panel.border=element_rect(size=0.1,
+                                             color=palette.personal["main.light"],
+                                             fill=NA),
+                   panel.grid=element_blank(),
+                   panel.spacing=unit(0.1,"lines"),
+                   plot.title=element_markdown(),
+                   plot.title.position="plot",
+                   plot.subtitle=element_markdown(),
+                   strip.background=element_blank(),
+                   strip.placement="outside",
+                   strip.text=element_text(color=palette.personal["main.dark"],
+                                           face="italic"))
+}
+
+ggplot2::theme_set(my.theme())
+
+
 # ~~~ LABELS ~~~ ####
 
 
@@ -147,9 +148,9 @@ palette.years = c("firebrick",		# current/target year
 
 # * FUN : Label Color ####
 f.label.color = function(x,
-                         color.negative=palette.ESTAT["red.3"], # "red"
-                         color.neutral=palette.ESTAT["teal.3"], # "lightgrey"
-                         color.pozitive=palette.ESTAT["green.3"]) { # "green4"
+                         color.negative="red", # palette.ESTAT["red.3"]
+                         color.neutral="lightgrey", # palette.ESTAT["teal.3"]
+                         color.pozitive="green4") { # palette.ESTAT["green.3"]
   paste0("<b><span style='color:",
          dplyr::case_when(x<0~color.negative,
                           x>0~color.pozitive,
