@@ -32,6 +32,7 @@ pacman::p_load(
   rvest,        	#[OUTILS]       https://cran.r-project.org/web/packages/rvest/index.html
   # webshot,		  #[OUTILS]		    https://cran.r-project.org/web/packages/webshot/index.html
   withr,			    #[OUTILS]   		https://cran.r-project.org/web/packages/withr/index.html
+  xfun,			      #[OUTILS]   		https://cran.r-project.org/web/packages/xfun/index.html
   zip,			      #[OUTILS]   		https://cran.r-project.org/web/packages/zip/index.html
   # officer,        #[REPORT]    		https://cran.r-project.org/web/packages/officer/index.html
   # officedown,		  #[REPORT]    		https://cran.r-project.org/web/packages/officedown/index.html
