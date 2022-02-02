@@ -48,6 +48,7 @@ pacman::p_load(
   # tsibble,		  #[TIME SERIES]	https://cran.r-project.org/web/packages/tsibble/index.html
   # urca,        	#[TIME SERIES]	https://cran.r-project.org/web/packages/urca/index.html
   # zoo,       	  #[TIME SERIES]	https://cran.r-project.org/web/packages/zoo/index.html
+  # geomtextpath,	  #[VIZ]    			https://cran.r-project.org/web/packages/geomtextpath/index.html
   # ggiraph,		  #[VIZ]    			https://cran.r-project.org/web/packages/ggiraph/index.html
   # ggplotify,	  #[VIZ]    			https://cran.r-project.org/web/packages/ggplotify/index.html
   # ggpubr,		    #[VIZ]    			https://cran.r-project.org/web/packages/ggpubr/index.html
