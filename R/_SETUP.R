@@ -162,10 +162,21 @@ f.label.color = function(x,
 # scale_y_continuous(labels=function (X) f.label.color(X,"midnightblue","#273749","magenta") / labels=f.label.color)
 
 # * FUN : Pretty Rounding ####
-f.pretty.round = function (x,step=5) {
-  E=ifelse(x==0,0,floor(log10(abs(x))-1))
+f.pretty.round = function (x,
+			   step=5) {
+  E=ifelse(x==0,0,
+	   floor(log10(abs(x))-1))
   F=x/10^E
   step*ceiling(F/step)*10^E
+}
+
+# FUN : Percentage rounding to 0.5, and dropping trailing zeros ####
+f.pct.round = function(x,
+                       step=5) {
+  paste0(prettyNum(step*round(x/step,1),
+                   digits=2,
+                   format="g"),
+         "%")
 }
 
 # * FUN : Get Eurostat data ####
