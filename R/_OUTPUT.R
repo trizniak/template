@@ -23,7 +23,7 @@ report.XXXXXXX=FALSE
 
 # ~~~ OUTPUT SECTIONS ~~~ ####
 
-# XXXXXXX ~~~ ####
+# ::: XXXXXXX ::: ####
 # XXXXXXX ####
 # * XXXXXXX ####
 # ... XXXXXXX ####
