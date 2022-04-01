@@ -1,0 +1,43 @@
+{
+    "initial_working_directory": "C:/Users/Public",
+    "default_project_location": "C:/Users/Public",
+    "panes": {
+        "quadrants": [
+            "Source",
+            "Console",
+            "TabSet1",
+            "TabSet2"
+        ],
+        "tabSet1": [
+            "Environment",
+            "VCS",
+            "Presentation"
+        ],
+        "tabSet2": [
+            "Files",
+            "Plots",
+            "Packages",
+            "Help",
+            "Viewer"
+        ],
+        "hiddenTabSet": [
+            "History",
+            "Connections",
+            "Build",
+            "Tutorial"
+        ],
+        "console_left_on_top": false,
+        "console_right_on_top": true,
+        "additional_source_columns": 0
+    },
+    "restore_source_documents": false,
+    "check_for_updates": false,
+    "restore_last_project": true,
+    "save_workspace": "never",
+    "load_workspace": false,
+    "graphics_backend": "ragg",
+    "insert_spaces_around_equals": false,
+    "font_size_points": 11,
+    "editor_theme": "Hobo",
+    "windows_terminal_shell": "win-git-bash"
+}
