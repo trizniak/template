@@ -4,13 +4,13 @@
 
 # ~~~ PARAMS ~~~ ####
 
-# Sections to run ~~~ ####
+# ::: Sections to run ::: ####
 run.output=FALSE # check below OUTPUT.[ Sections to run ] - included as parameters in ./R/_OUTPUT.R
   # OUTPUT.xxx=FALSE
 
-# FOLDERS & FILENAMES ~~~ ####
+# ::: FOLDERS & FILENAMES ::: ####
 
-# UPDATES ~~~ ####
+# ::: UPDATES ::: ####
 update.reference.info=FALSE
 update.data=FALSE
   copy.datafiles=FALSE # copy input datafiles to work folder ; relevant only if update.data=TRUE
