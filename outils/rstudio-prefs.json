@@ -37,7 +37,7 @@
     "load_workspace": false,
     "graphics_backend": "ragg",
     "insert_spaces_around_equals": false,
-    "font_size_points": 9,
+    "font_size_points": 11,
     "editor_theme": "Hobo",
     "windows_terminal_shell": "win-git-bash"
 }
