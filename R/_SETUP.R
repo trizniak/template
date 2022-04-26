@@ -30,6 +30,7 @@ pacman::p_load(
   # glue,			    #[OUTILS]		    https://cran.r-project.org/web/packages/glue/index.html
   janitor,		    #[OUTILS]	    	https://cran.r-project.org/web/packages/janitor/index.html
   rvest,        	#[OUTILS]       https://cran.r-project.org/web/packages/rvest/index.html
+  tidytext,       #[OUTILS]       https://cran.r-project.org/web/packages/tidytext/index.html
   # webshot,		  #[OUTILS]		    https://cran.r-project.org/web/packages/webshot/index.html
   withr,			    #[OUTILS]   		https://cran.r-project.org/web/packages/withr/index.html
   xfun,			      #[OUTILS]   		https://cran.r-project.org/web/packages/xfun/index.html
