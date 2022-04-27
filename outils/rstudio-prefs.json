@@ -39,5 +39,6 @@
     "insert_spaces_around_equals": false,
     "font_size_points": 11,
     "editor_theme": "Hobo",
+    "tab_completion": false,
     "windows_terminal_shell": "win-git-bash"
 }
