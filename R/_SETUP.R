@@ -31,7 +31,7 @@ pacman::p_load(
   janitor,		    #[OUTILS]	    	https://cran.r-project.org/web/packages/janitor/index.html
   rvest,        	#[OUTILS]       https://cran.r-project.org/web/packages/rvest/index.html
   tidytext,       #[OUTILS]       https://cran.r-project.org/web/packages/tidytext/index.html
-  # webshot,		  #[OUTILS]		    https://cran.r-project.org/web/packages/webshot/index.html
+  # webshot2,		  #[OUTILS]		    https://cran.r-project.org/web/packages/webshot2/index.html
   withr,			    #[OUTILS]   		https://cran.r-project.org/web/packages/withr/index.html
   xfun,			      #[OUTILS]   		https://cran.r-project.org/web/packages/xfun/index.html
   zip,			      #[OUTILS]   		https://cran.r-project.org/web/packages/zip/index.html
@@ -65,8 +65,6 @@ pacman::p_load(
   # ragg,        	#[VIZ]    			https://cran.r-project.org/web/packages/ragg/index.html
   tidyverse		    #[.KEY]		    	https://cran.r-project.org/web/packages/tidyverse/index.html
 )
-# ... webshot ####
-# webshot::install_phantomjs(force=FALSE)
 
 # ... Necessary on business machine ¯\_(ツ)_/¯ ####
 library(dplyr)
