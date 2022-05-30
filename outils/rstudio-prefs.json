@@ -35,6 +35,7 @@
     "restore_last_project": true,
     "save_workspace": "never",
     "load_workspace": false,
+    "always_save_history": false
     "graphics_backend": "ragg",
     "insert_spaces_around_equals": false,
     "font_size_points": 11,
