@@ -18,9 +18,10 @@ pacman::p_load(
   here,			      #[.KEY]         https://cran.r-project.org/web/packages/here/index.html
   readr,			    #[.KEY]         https://cran.r-project.org/web/packages/readr/index.html
   scales,			    #[.KEY]         https://cran.r-project.org/web/packages/scales/index.html
+  # factoextra,		#[ANALYTICS]	  https://cran.r-project.org/web/packages/factoextra/index.html
   # smacof,		    #[ANALYTICS]    https://cran.r-project.org/web/packages/smacof/index.html
   # pheatmap,		  #[ANALYTICS]	  https://cran.r-project.org/web/packages/pheatmap/index.html
-  yardstick,		  #[ANALYTICS]	  https://cran.r-project.org/web/packages/yardstick/index.html
+  # yardstick,		  #[ANALYTICS]	  https://cran.r-project.org/web/packages/yardstick/index.html
   # docxtractr,	  #[DATA]			    https://cran.r-project.org/web/packages/docxtractr/index.html
   eurostat,		    #[DATA]			    https://cran.r-project.org/web/packages/eurostat/index.html
   readxl,			    #[DATA]		    	https://cran.r-project.org/web/packages/readxl/index.html
@@ -28,7 +29,10 @@ pacman::p_load(
   writexl,		    #[DATA]		    	https://cran.r-project.org/web/packages/writexl/index.html
   # crosstalk,	  #[INTERACTIVE]  https://cran.r-project.org/web/packages/crosstalk/index.html
   # glue,			    #[OUTILS]		    https://cran.r-project.org/web/packages/glue/index.html
+  english,		    #[OUTILS]	    	https://cran.r-project.org/web/packages/english/index.html 
   janitor,		    #[OUTILS]	    	https://cran.r-project.org/web/packages/janitor/index.html
+  lubridate,      #[OUTILS]       https://cran.r-project.org/web/packages/lubridate/index.html
+  png,			      #[OUTILS]   		https://cran.r-project.org/web/packages/png/index.html
   rvest,        	#[OUTILS]       https://cran.r-project.org/web/packages/rvest/index.html
   tidytext,       #[OUTILS]       https://cran.r-project.org/web/packages/tidytext/index.html
   # webshot2,		  #[OUTILS]		    https://cran.r-project.org/web/packages/webshot2/index.html
