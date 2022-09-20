@@ -46,6 +46,7 @@ pacman::p_load(
   ftExtra,			#[TAB]    			https://cran.r-project.org/web/packages/ftExtra/index.html
   # kableExtra,	  #[TAB]    			https://cran.r-project.org/web/packages/kableExtra/index.html
   # reactable,	  #[TAB]    			https://cran.r-project.org/web/packages/reactable/index.html
+  # reactablefmtr,	  #[TAB]    			https://cran.r-project.org/web/packages/reactablefmtr/index.html
   # dtwclust,		  #[TIME SERIES]	https://cran.r-project.org/web/packages/dtwclust/index.html
   # fable,        #[TIME SERIES]	https://cran.r-project.org/web/packages/fable/index.html
   # feasts,		    #[TIME SERIES]	https://cran.r-project.org/web/packages/feasts/index.html
