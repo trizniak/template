@@ -153,6 +153,23 @@ ggplot2::theme_set(my.theme())
 
 # ~~~ AUX FUNS ~~~ ####
 
+# * FUN : TIMING + MESSAGE ####
+f.timing = function (.start=section.start,
+                     .message,
+                     .sep.rows=1) {
+  cat(sep="\n",
+      paste0(rep("\n",.sep.rows) %>%
+               paste(collapse=""),
+             .message,
+             lubridate::int_diff(c(section.start,
+                                   Sys.time())) %>%
+               lubridate::int_length() %>%
+               round() %>%
+               lubridate::seconds_to_period(),
+             rep("\n",.sep.rows) %>%
+               paste(collapse="")))
+}
+
 # * FUN : Label Color ####
 f.label.color = function(x,
                          color.negative="red", # palette.ESTAT["red.3"]
