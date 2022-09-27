@@ -161,7 +161,7 @@ f.timing = function (.start=section.start,
       paste0(rep("\n",.sep.rows) %>%
                paste(collapse=""),
              .message,
-             lubridate::int_diff(c(section.start,
+             lubridate::int_diff(c(.start,
                                    Sys.time())) %>%
                lubridate::int_length() %>%
                round() %>%
