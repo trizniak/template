@@ -1,6 +1,9 @@
 # ==== SETUP ====
 # #### ~~~~~ ####
 
+.connect2internet("OrizaT",
+		  method="libcurl")
+
 # ~~~ OPTIONS ~~~ ####
 # ... Code appearance ([Tools] [Global Options] [Appearance]) : Tomorrow Night Blue
 
