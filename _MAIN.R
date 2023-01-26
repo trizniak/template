@@ -44,14 +44,18 @@ if (update.data) {
 # load("./data/XXXXXXXX.RData")
 
 # ~~~ OUTPUT ~~~ ####
+
+# [ SECTION START ] ####
+section.start=Sys.time()
+
 if (run.output) {
   source("./R/_OUTPUT.R")  # check above OUTPUT.[ Sections to run ]
 }
 
+# [ SECTION END ] ####
+f.timing(.message="XXXXXX")
+
 # ~~~ RUN : END ~~~ ####
-cat(paste0("RUNTIME : ",
-           lubridate::int_diff(c(run.start,
-                                 Sys.time())) %>%
-             lubridate::int_length() %>%
-             round() %>%
-             lubridate::seconds_to_period()))
+f.timing(.start=run.start,
+         .message="RUNTIME : ",
+         .sep.rows=2)
