@@ -2,6 +2,7 @@
 # #### ~~~~~ ####
 
 .connect2internet("OrizaT",
+		  storePwd=TRUE,
 		  method="libcurl")
 
 # ~~~ OPTIONS ~~~ ####
