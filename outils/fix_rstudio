@@ -1,0 +1,14 @@
+Repair Rstudio
+(1) uninstall
+	restart
+(2) install
+(3) PowerShell commands [should see action in all steps]
+	* go to C:\
+	* Stop-AppvClientPackage *Rstudio*
+	* Repair-AppvClientPackage *Rstudio*
+	* Unpublish-AppvClientPackage *Rstudio*
+	* Remove-AppvClientPackage *Rstudio*
+	* Sync-AppvPublishingServer 1
+(4) Microsoft App V
+	* Update
+	* Download
