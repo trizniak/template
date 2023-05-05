@@ -1,6 +1,8 @@
 # ==== SETUP ====
 # #### ~~~~~ ####
 
+# ~~~ INIT ~~~ ####
+Sys.setenv(RSTUDIO_PANDOC="C:/ProgramData/AppV/602C1D12-9652-4057-A07E-CB0228E7F453/5911E79A-F24E-463B-B533-4FB380847DAE/Root/RStudio/bin/pandoc")
 .connect2internet("OrizaT",
 		  storePwd=TRUE,
 		  method="libcurl")
