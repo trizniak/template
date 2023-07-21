@@ -15,6 +15,7 @@ options(repr.plot.width=49,
 	scipen=999,
 	digits=1,
 	warn=-1,
+	timeout=666, # longer timeout required for downloading larger files
 	dplyr.summarise.inform=FALSE) # suppress additional info
 
 # ~~~ PACKAGES ~~~ ####
